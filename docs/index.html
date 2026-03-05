@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio Keneth A. Palacios Noguera</title>
+  <meta name="description" content="Portafolio de resultados: Contabilidad + Automatización (Excel, Python, BI) con proyectos completados, en progreso y futuros." />
+
+  <style>
+  :root{
+    /* Palette */
+    --white:#FFFFFF;
+    --red-1:#9B0D0B;  /* accent */
+    --red-2:#450805;  /* deep */
+    --red-3:#110505;  /* background */
+
+    /* Surfaces */
+    --bg: var(--red-3);
+    --panel: rgba(17,5,5,.72);
+    --panel-2: rgba(69,8,5,.55);
+
+    /* Text */
+    --text: rgba(255,255,255,.92);
+    --muted: rgba(255,255,255,.68);
+
+    /* Borders & effects */
+    --border: rgba(255,255,255,.10);
+    --shadow: 0 12px 40px rgba(0,0,0,.55);
+    --radius:16px;
+    --radius-sm:12px;
+    --max:1100px;
+    --gap:16px;
+
+    /* Chips */
+    --chip: rgba(255,255,255,.04);
+    --chip2: rgba(255,255,255,.03);
+
+    /* Brand gradients */
+    --glow: rgba(155,13,11,.18);
+    --glow2: rgba(255,255,255,.06);
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    background:
+      radial-gradient(1100px 650px at 10% 0%, var(--glow), transparent 55%),
+      radial-gradient(900px 600px at 90% 10%, var(--glow2), transparent 55%),
+      linear-gradient(180deg, rgba(69,8,5,.25), transparent 40%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.45;
+  }
+
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background: linear-gradient(to bottom, rgba(17,5,5,.92), rgba(17,5,5,.62));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:16px 24px; max-width:var(--max); margin:0 auto;
+  }
+
+  .brand{display:flex; gap:12px; align-items:center; min-width: 250px;}
+
+  .avatar{
+    width:38px; height:38px; border-radius:12px;
+    background: linear-gradient(135deg, rgba(155,13,11,.95), rgba(255,255,255,.12));
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 12px 30px rgba(0,0,0,.55);
+  }
+
+  .brand h1{font-size:14px; margin:0}
+  .brand p{margin:0; font-size:12px; color:var(--muted)}
+
+  .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 12px; border-radius:12px;
+    background: rgba(255,255,255,.04);
+    border:1px solid var(--border);
+    transition:.15s ease;
+    font-size:13px;
+  }
+  .btn:hover{
+    transform: translateY(-1px);
+    background: rgba(255,255,255,.06);
+    border-color: rgba(155,13,11,.35);
+    box-shadow: 0 10px 24px rgba(0,0,0,.45);
+  }
+
+  .hero{padding:28px 0 18px 0;}
+  .hero h2{margin:0 0 8px 0; font-size:28px; letter-spacing:-.4px;}
+  .hero .sub{margin:0; color:var(--muted); max-width: 78ch;}
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: var(--gap);
+    margin-top: 16px;
+  }
+  @media (max-width: 900px){
+    .grid{grid-template-columns:1fr}
+    .brand{min-width:auto}
+  }
+
+  .panel{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+  }
+
+  .panel .hd{
+    padding:14px 16px;
+    border-bottom: 1px solid var(--border);
+    display:flex; gap:12px; align-items:center; justify-content:space-between;
+    background: linear-gradient(180deg, rgba(69,8,5,.22), transparent);
+  }
+
+  .panel .hd h3{margin:0; font-size:14px}
+  .panel .bd{padding:16px}
+  .muted{color:var(--muted)}
+
+  .kpis{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 650px){ .kpis{grid-template-columns:1fr} }
+
+  .kpi{
+    padding:12px; border-radius:14px;
+    border:1px solid var(--border);
+    background: rgba(255,255,255,.03);
+  }
+  .kpi .v{font-size:18px; font-weight:650}
+  .kpi .l{font-size:12px; color:var(--muted); margin-top:2px}
+
+  .controls{
+    display:flex; gap:10px; flex-wrap:wrap;
+    align-items:center;
+  }
+
+  .search{
+    flex:1;
+    min-width: 240px;
+    display:flex; align-items:center; gap:10px;
+    padding:10px 12px; border-radius:12px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.03);
+  }
+
+  .search input{
+    width:100%; border:0; outline:0; background:transparent;
+    color: var(--text); font-size:13px;
+  }
+
+  .chips{display:flex; flex-wrap:wrap; gap:8px}
+
+  .chip{
+    padding:8px 10px; border-radius:999px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border);
+    font-size:12px;
+    cursor:pointer;
+    user-select:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition: .15s ease;
+  }
+  .chip:hover{border-color: rgba(155,13,11,.35)}
+  .chip[data-active="true"]{
+    background: rgba(155,13,11,.16);
+    border-color: rgba(155,13,11,.55);
+  }
+
+  .chip .logo{
+    width:16px; height:16px; border-radius:6px;
+    display:inline-flex; align-items:center; justify-content:center;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+    font-size:11px;
+  }
+  .chip small{opacity:.95}
+
+  .section{margin-top: 18px;}
+  .section h4{
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 650;
+    letter-spacing:.3px;
+    text-transform: uppercase;
+  }
+
+  .cards{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 780px){ .cards{grid-template-columns:1fr} }
+
+  .card{
+    padding:14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.03);
+    display:flex; flex-direction:column; gap:10px;
+    transition:.15s ease;
+    position:relative;
+  }
+  .card:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.05);
+    border-color: rgba(155,13,11,.28);
+  }
+
+  .row{display:flex; gap:10px; align-items:flex-start; justify-content:space-between}
+  .title{font-weight:750; letter-spacing:-.2px;}
+
+  .badge{
+    font-size:11px;
+    padding:6px 9px;
+    border-radius:999px;
+    border:1px solid rgba(155,13,11,.25);
+    color: rgba(255,255,255,.78);
+    background: rgba(69,8,5,.28);
+    white-space:nowrap;
+  }
+
+  .desc{margin:0; color:var(--muted); font-size:13px}
+
+  .tags{display:flex; flex-wrap:wrap; gap:8px}
+  .tag{
+    font-size:11px;
+    padding:6px 8px;
+    border-radius:999px;
+    background: rgba(69,8,5,.20);
+    border: 1px solid rgba(255,255,255,.10);
+    color: rgba(255,255,255,.86);
+  }
+
+  .actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:2px}
+  .a{
+    font-size:12px;
+    padding:8px 10px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background: rgba(255,255,255,.03);
+    transition: .15s ease;
+  }
+  .a:hover{
+    background: rgba(155,13,11,.12);
+    border-color: rgba(155,13,11,.40);
+  }
+
+  footer{
+    padding: 30px 0 24px 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .count{font-size:12px; color:var(--muted)}
+
+  .note{
+    font-size:12px; color:var(--muted);
+    border-left: 2px solid rgba(155,13,11,.55);
+    padding-left: 10px;
+    margin: 10px 0 0 0;
+  }
+</style>
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true"></div>
+      <div>
+        <h1>Keneth A. Palacios </h1>
+        <p>Estudiante en Ciberseguridad Financiera | Auditoría de Sistemas & Data Analytics</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="btn" href="https://www.linkedin.com/in/keneth-palacios" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/KPforusesmain" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="mailto:kenethmain@gmail.com">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h2>Resultados claros, proyectos mantenibles.</h2>
+    <p class="sub">
+      Usa los filtros del menú para explorar por áreas de interés. Dentro de cada proyecto verás mi proceso creativo, las métricas que validan cada decisión y el impacto real de los resultados.
+      <span class="muted">Filtro por tipo, búsqueda, y secciones por estado.</span>
+    </p>
+  </section>
+
+  <section class="grid">
+    <!-- LEFT: Projects -->
+    <div class="panel">
+      <div class="hd">
+        <h3>Proyectos</h3>
+        <div class="count" id="count">0 resultados</div>
+      </div>
+
+      <div class="bd">
+        <div class="controls">
+          <div class="search" title="Busca por nombre, tags o descripción">
+            <span aria-hidden="true">⌕</span>
+            <input id="q" type="search" placeholder="Buscar: conciliación, dashboard, facturación..." />
+          </div>
+
+          <div class="chips" id="chips">
+            <!-- chips se renderizan por JS -->
+          </div>
+        </div>
+
+        <p class="note">
+          Consejo: ¿Quieres ver el corazón de cada proyecto directamente? Los botones de acceso rápido te llevarán a las piezas clave de cada caso: desde el primer boceto hasta el resultado final y su impacto.
+        </p>
+
+        <div class="section" id="sec-completed">
+          <h4>Completados</h4>
+          <div class="cards" id="cards-completed"></div>
+        </div>
+
+        <div class="section" id="sec-progress">
+          <h4>En progreso</h4>
+          <div class="cards" id="cards-progress"></div>
+        </div>
+
+        <div class="section" id="sec-future">
+          <h4>Futuros</h4>
+          <div class="cards" id="cards-future"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: About / Highlights -->
+    <aside class="panel">
+      <div class="hd">
+        <h3>Enfoque</h3>
+      </div>
+      <div class="bd">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="v" id="kpi-total">—</div>
+            <div class="l">Proyectos elaborados</div>
+          </div>
+          <div class="kpi">
+            <div class="v" id="kpi-main">A → C → B</div>
+            <div class="l">Prioridad (Contab → Software → GRC)</div>
+          </div>
+          <div class="kpi">
+            <div class="v">1 pág</div>
+            <div class="l">Executive Summary por proyecto</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <p class="muted" style="margin:0 0 10px 0">
+            Especializado en automatización y reporting para procesos contables/financieros:
+            conciliaciones, aging, control de calidad de datos y análisis de variaciones.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Excel Avanzado</span>
+            <span class="tag">Python (pandas)</span>
+            <span class="tag">Power BI (opcional)</span>
+            <span class="tag">Automatización</span>
+            <span class="tag">Control interno</span>
+          </div>
+
+          <!-- Enlace selectivo NO visible públicamente (deja vacío y compártelo por DM cuando toque) -->
+          <!-- <div style="margin-top:12px">
+            <a class="btn" href="LINK-PRIVADO" target="_blank" rel="noopener">Recruiter Pack (Privado)</a>
+          </div> -->
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Keneth A. Palacios Noguera. Construido para GitHub Pages.
+  </footer>
+</main>
+
+<script>
+  // 1) DATA: edita aquí (fácil mantenimiento)
+  // status: "completed" | "progress" | "future"
+  // types: usa tags para filtros (ej. "Excel", "Python", "BI", "Software", "GRC")
+  const PROJECTS = [
+    {
+      id: "p1-dashboard-financiero",
+      title: "Dashboard Financiero PYME",
+      status: "completed",
+      summary: "KPIs de ingresos/gastos, margen, cashflow y variaciones para toma de decisiones.",
+      results: ["Reporte 1 pág", "6 capturas", "Dataset sintético"],
+      tags: ["BI", "Excel", "Power BI", "Reporting"],
+      // logos: se muestran como iconos en chips (no necesitas imágenes)
+      logos: ["BI"],
+      links: {
+        caseStudy: "assets/pdf/p1-dashboard.pdf",
+        demo: "",
+        repo: "" // opcional
+      }
+    },
+    {
+      id: "p2-conciliacion",
+      title: "Conciliación Bancaria Semi-Automática",
+      status: "progress",
+      summary: "Matching por monto/fecha/texto con tolerancias. Output: matched/unmatched/review.",
+      results: ["Script Python", "Ejemplo CSV", "Reporte de diferencias"],
+      tags: ["Python", "Excel", "Automatización", "Control interno"],
+      logos: ["Py", "XL"],
+      links: {
+        caseStudy: "assets/pdf/p2-conciliacion.pdf",
+        demo: "",
+        repo: ""
+      }
+    },
+    {
+      id: "p10-grc",
+      title: "GRC Starter Kit (Finanzas)",
+      status: "future",
+      summary: "Risk register + controles + evidencia + matriz impacto/probabilidad para procesos financieros.",
+      results: ["Plantillas", "Caso de ejemplo", "Mapa de controles"],
+      tags: ["GRC", "Riesgo", "Compliance", "Procesos"],
+      logos: ["GRC"],
+      links: {
+        caseStudy: "",
+        demo: "",
+        repo: ""
+      }
+    }
+  ];
+
+  // 2) FILTERS: define chips (logos/tipos)
+  // "logo" es una etiqueta corta que aparece como icono; "key" filtra por tags y/o por logos
+  const FILTERS = [
+    { key: "ALL", label: "Todos", logo: "★" },
+    { key: "Excel", label: "Excel", logo: "XL" },
+    { key: "Python", label: "Python", logo: "Py" },
+    { key: "BI", label: "BI", logo: "BI" },
+    { key: "Software", label: "Software", logo: "API" },
+    { key: "GRC", label: "GRC", logo: "GRC" },
+  ];
+
+  // State
+  const state = {
+    q: "",
+    activeFilter: "ALL"
+  };
+
+  const $ = (id) => document.getElementById(id);
+
+  function normalize(str){
+    return (str || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  }
+
+  function matchesFilter(p){
+    if(state.activeFilter === "ALL") return true;
+    // Coincide si el filtro está en tags o en logos
+    return (p.tags || []).includes(state.activeFilter) || (p.logos || []).includes(state.activeFilter);
+  }
+
+  function matchesQuery(p){
+    const q = normalize(state.q).trim();
+    if(!q) return true;
+    const hay = normalize([p.title, p.summary, (p.tags||[]).join(" "), (p.results||[]).join(" ")].join(" | "));
+    return hay.includes(q);
+  }
+
+  function cardHTML(p){
+    const statusLabel = p.status === "completed" ? "Completado" :
+                        p.status === "progress" ? "En progreso" : "Futuro";
+
+    const actions = [];
+    if(p.links?.caseStudy) actions.push(`<a class="a" href="${p.links.caseStudy}" target="_blank" rel="noopener">Case Study (PDF)</a>`);
+    if(p.links?.demo) actions.push(`<a class="a" href="${p.links.demo}" target="_blank" rel="noopener">Demo</a>`);
+    if(p.links?.repo) actions.push(`<a class="a" href="${p.links.repo}" target="_blank" rel="noopener">Repo</a>`);
+
+    return `
+      <article class="card" data-id="${p.id}">
+        <div class="row">
+          <div style="min-width:0">
+            <div class="title">${p.title}</div>
+          </div>
+          <div class="badge">${statusLabel}</div>
+        </div>
+        <p class="desc">${p.summary}</p>
+
+        <div class="tags">
+          ${(p.tags || []).slice(0,6).map(t => `<span class="tag">${t}</span>`).join("")}
+        </div>
+
+        <div class="desc" style="margin-top:2px">
+          <strong style="color:rgba(231,238,249,.92); font-weight:650">Entregables:</strong>
+          ${(p.results || []).slice(0,3).join(" · ")}
+        </div>
+
+        <div class="actions">
+          ${actions.join("") || `<span class="muted" style="font-size:12px">Próximamente: enlaces</span>`}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderChips(){
+    const wrap = $("chips");
+    wrap.innerHTML = FILTERS.map(f => `
+      <div class="chip" role="button" tabindex="0"
+           data-key="${f.key}" data-active="${f.key === state.activeFilter}">
+        <span class="logo" aria-hidden="true">${f.logo}</span>
+        <small>${f.label}</small>
+      </div>
+    `).join("");
+
+    wrap.querySelectorAll(".chip").forEach(chip => {
+      const activate = () => {
+        state.activeFilter = chip.dataset.key;
+        render();
+      };
+      chip.addEventListener("click", activate);
+      chip.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " ") activate();
+      });
+    });
+  }
+
+  function render(){
+    // update chips active state
+    document.querySelectorAll(".chip").forEach(el => {
+      el.dataset.active = (el.dataset.key === state.activeFilter).toString();
+    });
+
+    const filtered = PROJECTS.filter(p => matchesFilter(p) && matchesQuery(p));
+
+    const completed = filtered.filter(p => p.status === "completed");
+    const progress = filtered.filter(p => p.status === "progress");
+    const future = filtered.filter(p => p.status === "future");
+
+    $("cards-completed").innerHTML = completed.map(cardHTML).join("") || `<p class="muted">Sin resultados.</p>`;
+    $("cards-progress").innerHTML  = progress.map(cardHTML).join("")  || `<p class="muted">Sin resultados.</p>`;
+    $("cards-future").innerHTML    = future.map(cardHTML).join("")    || `<p class="muted">Sin resultados.</p>`;
+
+    // show/hide sections if empty
+    $("sec-completed").style.display = completed.length ? "block" : "none";
+    $("sec-progress").style.display  = progress.length  ? "block" : "none";
+    $("sec-future").style.display    = future.length    ? "block" : "none";
+
+    $("count").textContent = `${filtered.length} resultado${filtered.length === 1 ? "" : "s"}`;
+    $("kpi-total").textContent = `${PROJECTS.length}`;
+  }
+
+  // events
+  $("q").addEventListener("input", (e) => {
+    state.q = e.target.value;
+    render();
+  });
+
+  // init
+  $("year").textContent = new Date().getFullYear();
+  renderChips();
+  render();
+</script>
+
+</body>
+</html>
