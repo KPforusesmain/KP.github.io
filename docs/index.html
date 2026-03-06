@@ -3,292 +3,430 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio Keneth A. Palacios Noguera</title>
+  <title>Portafolio Keneth A.Palacios</title>
   <meta name="description" content="Portafolio de resultados: Contabilidad + Automatización (Excel, Python, BI) con proyectos completados, en progreso y futuros." />
 
   <style>
-  :root{
-    /* Palette */
-    --white:#FFFFFF;
-    --red-1:#9B0D0B;  /* accent */
-    --red-2:#450805;  /* deep */
-    --red-3:#110505;  /* background */
+    :root{
+      --white:#FFFFFF;
+      --black:#0F0F10;
+      --black-2:#1D1D1F;
+      --gray-1:#F5F5F6;
+      --gray-2:#E8E8EA;
+      --gray-3:#7C7C84;
+      --red-1:#9B0D0B;
+      --red-2:#450805;
+      --red-3:#110505;
 
-    /* Surfaces */
-    --bg: var(--red-3);
-    --panel: rgba(17,5,5,.72);
-    --panel-2: rgba(69,8,5,.55);
+      --bg: var(--white);
+      --panel: rgba(255,255,255,.96);
+      --panel-2: rgba(245,245,246,.96);
+      --text: var(--black);
+      --muted: #5C5C65;
+      --border: rgba(15,15,16,.10);
+      --shadow: 0 16px 40px rgba(0,0,0,.08);
+      --shadow-soft: 0 8px 24px rgba(0,0,0,.06);
+      --radius:18px;
+      --radius-sm:14px;
+      --max:1180px;
+      --gap:18px;
+      --accent: var(--red-1);
+      --accent-deep: var(--red-2);
+      --success-bg:#F8ECEC;
+      --progress-bg:#FBF4F4;
+      --future-bg:#F4F4F5;
+    }
 
-    /* Text */
-    --text: rgba(255,255,255,.92);
-    --muted: rgba(255,255,255,.68);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-    /* Borders & effects */
-    --border: rgba(255,255,255,.10);
-    --shadow: 0 12px 40px rgba(0,0,0,.55);
-    --radius:16px;
-    --radius-sm:12px;
-    --max:1100px;
-    --gap:16px;
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(900px 500px at 0% 0%, rgba(155,13,11,.06), transparent 45%),
+        radial-gradient(800px 450px at 100% 15%, rgba(69,8,5,.05), transparent 48%),
+        linear-gradient(180deg, #fff 0%, #fcfcfc 100%);
+      color:var(--text);
+      line-height:1.5;
+      position:relative;
+      overflow-x:hidden;
+    }
 
-    /* Chips */
-    --chip: rgba(255,255,255,.04);
-    --chip2: rgba(255,255,255,.03);
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:auto;
+      z-index:0;
+      pointer-events:none;
+      opacity:.06;
+      background:var(--black);
+      filter:blur(.2px);
+    }
 
-    /* Brand gradients */
-    --glow: rgba(155,13,11,.18);
-    --glow2: rgba(255,255,255,.06);
-  }
+    body::before{
+      width:220px; height:220px;
+      top:90px; right:-70px;
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      transform:rotate(14deg);
+    }
 
-  *{box-sizing:border-box}
+    body::after{
+      width:180px; height:180px;
+      bottom:90px; left:-55px;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      transform:rotate(-18deg);
+    }
 
-  body{
-    margin:0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    background:
-      radial-gradient(1100px 650px at 10% 0%, var(--glow), transparent 55%),
-      radial-gradient(900px 600px at 90% 10%, var(--glow2), transparent 55%),
-      linear-gradient(180deg, rgba(69,8,5,.25), transparent 40%),
-      var(--bg);
-    color:var(--text);
-    line-height:1.45;
-  }
+    .shape{
+      position:absolute;
+      z-index:0;
+      pointer-events:none;
+      opacity:.05;
+      background:var(--black);
+    }
+    .shape.s1{
+      width:92px; height:92px;
+      top:170px; left:5%;
+      border-radius:24px;
+      transform:rotate(28deg);
+    }
+    .shape.s2{
+      width:140px; height:140px;
+      top:520px; right:8%;
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    }
+    .shape.s3{
+      width:110px; height:110px;
+      bottom:180px; right:20%;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      transform:rotate(12deg);
+    }
 
-  a{color:inherit; text-decoration:none}
-  .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px; position:relative; z-index:1;}
 
-  header{
-    position:sticky; top:0; z-index:50;
-    background: linear-gradient(to bottom, rgba(17,5,5,.92), rgba(17,5,5,.62));
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-  }
+    header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.84);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(15,15,16,.08);
+    }
 
-  .topbar{
-    display:flex; align-items:center; justify-content:space-between;
-    gap:12px; padding:16px 24px; max-width:var(--max); margin:0 auto;
-  }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:16px 24px; max-width:var(--max); margin:0 auto;
+    }
 
-  .brand{display:flex; gap:12px; align-items:center; min-width: 250px;}
+    .brand{display:flex; gap:12px; align-items:center; min-width:260px;}
 
-  .avatar{
-    width:38px; height:38px; border-radius:12px;
-    background: linear-gradient(135deg, rgba(155,13,11,.95), rgba(255,255,255,.12));
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 12px 30px rgba(0,0,0,.55);
-  }
+    .avatar{
+      width:42px; height:42px; border-radius:14px;
+      background:
+        linear-gradient(135deg, var(--black), var(--red-1));
+      box-shadow: 0 10px 24px rgba(0,0,0,.12);
+      position:relative;
+      overflow:hidden;
+    }
+    .avatar::after{
+      content:"";
+      position:absolute;
+      width:18px; height:18px;
+      right:6px; bottom:6px;
+      border:2px solid rgba(255,255,255,.72);
+      border-radius:6px;
+      transform:rotate(45deg);
+    }
 
-  .brand h1{font-size:14px; margin:0}
-  .brand p{margin:0; font-size:12px; color:var(--muted)}
+    .brand h1{font-size:14px; margin:0; font-weight:800; color:var(--black)}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
 
-  .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
 
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:10px 12px; border-radius:12px;
-    background: rgba(255,255,255,.04);
-    border:1px solid var(--border);
-    transition:.15s ease;
-    font-size:13px;
-  }
-  .btn:hover{
-    transform: translateY(-1px);
-    background: rgba(255,255,255,.06);
-    border-color: rgba(155,13,11,.35);
-    box-shadow: 0 10px 24px rgba(0,0,0,.45);
-  }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 13px; border-radius:12px;
+      background:#fff;
+      border:1px solid rgba(15,15,16,.10);
+      transition:.18s ease;
+      font-size:13px;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      border-color: rgba(155,13,11,.35);
+      box-shadow: 0 16px 28px rgba(0,0,0,.10);
+    }
+    .btn-primary{
+      background:var(--black);
+      color:#fff;
+      border-color:var(--black);
+    }
+    .btn-primary:hover{
+      background:var(--red-1);
+      border-color:var(--red-1);
+    }
 
-  .hero{padding:28px 0 18px 0;}
-  .hero h2{margin:0 0 8px 0; font-size:28px; letter-spacing:-.4px;}
-  .hero .sub{margin:0; color:var(--muted); max-width: 78ch;}
+    .hero{padding:34px 0 18px 0; position:relative;}
+    .hero h2{margin:0 0 8px 0; font-size:32px; letter-spacing:-.6px; max-width:18ch;}
+    .hero .sub{margin:0; color:var(--muted); max-width:78ch;}
+    .hero-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; font-weight:700;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(15,15,16,.10);
+      background:#fff;
+      margin-bottom:14px;
+      box-shadow: var(--shadow-soft);
+    }
+    .hero-badge::before{
+      content:"";
+      width:8px; height:8px; border-radius:999px; background:var(--red-1);
+      box-shadow:0 0 0 4px rgba(155,13,11,.12);
+    }
 
-  .grid{
-    display:grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: var(--gap);
-    margin-top: 16px;
-  }
-  @media (max-width: 900px){
-    .grid{grid-template-columns:1fr}
-    .brand{min-width:auto}
-  }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: var(--gap);
+      margin-top: 18px;
+      align-items:start;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+    }
 
-  .panel{
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow:hidden;
-  }
+    .panel{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
 
-  .panel .hd{
-    padding:14px 16px;
-    border-bottom: 1px solid var(--border);
-    display:flex; gap:12px; align-items:center; justify-content:space-between;
-    background: linear-gradient(180deg, rgba(69,8,5,.22), transparent);
-  }
+    .panel .hd{
+      padding:15px 17px;
+      border-bottom: 1px solid var(--border);
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      background: linear-gradient(180deg, rgba(155,13,11,.05), transparent);
+    }
 
-  .panel .hd h3{margin:0; font-size:14px}
-  .panel .bd{padding:16px}
-  .muted{color:var(--muted)}
+    .panel .hd h3{margin:0; font-size:14px}
+    .panel .bd{padding:16px}
+    .muted{color:var(--muted)}
 
-  .kpis{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  @media (max-width: 650px){ .kpis{grid-template-columns:1fr} }
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 650px){ .kpis{grid-template-columns:1fr} }
 
-  .kpi{
-    padding:12px; border-radius:14px;
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.03);
-  }
-  .kpi .v{font-size:18px; font-weight:650}
-  .kpi .l{font-size:12px; color:var(--muted); margin-top:2px}
+    .kpi{
+      padding:14px; border-radius:15px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, #fff, #fafafa);
+    }
+    .kpi .v{font-size:19px; font-weight:750; color:var(--black)}
+    .kpi .l{font-size:12px; color:var(--muted); margin-top:3px}
 
-  .controls{
-    display:flex; gap:10px; flex-wrap:wrap;
-    align-items:center;
-  }
+    .controls{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
+    }
 
-  .search{
-    flex:1;
-    min-width: 240px;
-    display:flex; align-items:center; gap:10px;
-    padding:10px 12px; border-radius:12px;
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,.03);
-  }
+    .search{
+      flex:1;
+      min-width: 240px;
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid rgba(15,15,16,.10);
+      background:#fff;
+      box-shadow: var(--shadow-soft);
+    }
 
-  .search input{
-    width:100%; border:0; outline:0; background:transparent;
-    color: var(--text); font-size:13px;
-  }
+    .search input{
+      width:100%; border:0; outline:0; background:transparent;
+      color: var(--text); font-size:13px;
+    }
 
-  .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
 
-  .chip{
-    padding:8px 10px; border-radius:999px;
-    background: rgba(255,255,255,.03);
-    border: 1px solid var(--border);
-    font-size:12px;
-    cursor:pointer;
-    user-select:none;
-    display:inline-flex; align-items:center; gap:8px;
-    transition: .15s ease;
-  }
-  .chip:hover{border-color: rgba(155,13,11,.35)}
-  .chip[data-active="true"]{
-    background: rgba(155,13,11,.16);
-    border-color: rgba(155,13,11,.55);
-  }
+    .chip{
+      padding:8px 10px; border-radius:999px;
+      background:#fff;
+      border: 1px solid rgba(15,15,16,.10);
+      font-size:12px;
+      cursor:pointer;
+      user-select:none;
+      display:inline-flex; align-items:center; gap:8px;
+      transition: .15s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    .chip:hover{border-color: rgba(155,13,11,.35); transform:translateY(-1px)}
+    .chip[data-active="true"]{
+      background: rgba(155,13,11,.09);
+      border-color: rgba(155,13,11,.45);
+      color:var(--red-2);
+    }
 
-  .chip .logo{
-    width:16px; height:16px; border-radius:6px;
-    display:inline-flex; align-items:center; justify-content:center;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.10);
-    font-size:11px;
-  }
-  .chip small{opacity:.95}
+    .chip .logo{
+      width:18px; height:18px; border-radius:6px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: var(--black);
+      color:#fff;
+      font-size:10px;
+      font-weight:700;
+    }
 
-  .section{margin-top: 18px;}
-  .section h4{
-    margin: 0 0 10px 0;
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: 650;
-    letter-spacing:.3px;
-    text-transform: uppercase;
-  }
+    .section{margin-top: 22px;}
+    .section h4{
+      margin: 0 0 10px 0;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing:.4px;
+      text-transform: uppercase;
+    }
 
-  .cards{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  @media (max-width: 780px){ .cards{grid-template-columns:1fr} }
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 780px){ .cards{grid-template-columns:1fr} }
 
-  .card{
-    padding:14px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,.03);
-    display:flex; flex-direction:column; gap:10px;
-    transition:.15s ease;
-    position:relative;
-  }
-  .card:hover{
-    transform: translateY(-2px);
-    background: rgba(255,255,255,.05);
-    border-color: rgba(155,13,11,.28);
-  }
+    .card{
+      padding:15px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background:#fff;
+      display:flex; flex-direction:column; gap:10px;
+      transition:.18s ease;
+      position:relative;
+      box-shadow: var(--shadow-soft);
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width:5px;
+      border-radius:14px 0 0 14px;
+      background:var(--accent);
+      opacity:.9;
+    }
+    .card[data-status="progress"]::before{background:var(--red-2)}
+    .card[data-status="future"]::before{background:var(--black)}
+    .card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(155,13,11,.22);
+      box-shadow: 0 18px 30px rgba(0,0,0,.10);
+    }
 
-  .row{display:flex; gap:10px; align-items:flex-start; justify-content:space-between}
-  .title{font-weight:750; letter-spacing:-.2px;}
+    .row{display:flex; gap:10px; align-items:flex-start; justify-content:space-between}
+    .title{font-weight:800; letter-spacing:-.2px; font-size:15px;}
 
-  .badge{
-    font-size:11px;
-    padding:6px 9px;
-    border-radius:999px;
-    border:1px solid rgba(155,13,11,.25);
-    color: rgba(255,255,255,.78);
-    background: rgba(69,8,5,.28);
-    white-space:nowrap;
-  }
+    .badge{
+      font-size:11px;
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid rgba(15,15,16,.10);
+      color: var(--black);
+      background: #fff;
+      white-space:nowrap;
+      font-weight:700;
+    }
+    .badge.completed{background:var(--success-bg); color:var(--red-2); border-color:rgba(155,13,11,.14)}
+    .badge.progress{background:var(--progress-bg); color:var(--red-2); border-color:rgba(69,8,5,.12)}
+    .badge.future{background:var(--future-bg); color:var(--black);}
 
-  .desc{margin:0; color:var(--muted); font-size:13px}
+    .desc{margin:0; color:var(--muted); font-size:13px}
 
-  .tags{display:flex; flex-wrap:wrap; gap:8px}
-  .tag{
-    font-size:11px;
-    padding:6px 8px;
-    border-radius:999px;
-    background: rgba(69,8,5,.20);
-    border: 1px solid rgba(255,255,255,.10);
-    color: rgba(255,255,255,.86);
-  }
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:11px;
+      padding:6px 8px;
+      border-radius:999px;
+      background: #fff;
+      border: 1px solid rgba(15,15,16,.10);
+      color: var(--black);
+      font-weight:600;
+    }
 
-  .actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:2px}
-  .a{
-    font-size:12px;
-    padding:8px 10px;
-    border-radius:12px;
-    border:1px solid var(--border);
-    background: rgba(255,255,255,.03);
-    transition: .15s ease;
-  }
-  .a:hover{
-    background: rgba(155,13,11,.12);
-    border-color: rgba(155,13,11,.40);
-  }
+    .actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
+    .a{
+      font-size:12px;
+      padding:9px 11px;
+      border-radius:12px;
+      border:1px solid rgba(15,15,16,.10);
+      background:#fff;
+      transition: .15s ease;
+      font-weight:700;
+      box-shadow: var(--shadow-soft);
+    }
+    .a:hover{
+      background: rgba(155,13,11,.08);
+      border-color: rgba(155,13,11,.35);
+      transform:translateY(-1px);
+    }
+    .a.pdf-view{
+      background:var(--black);
+      color:#fff;
+      border-color:var(--black);
+    }
+    .a.pdf-view:hover{
+      background:var(--red-1);
+      border-color:var(--red-1);
+    }
+    .a.pdf-download{
+      background:#fff;
+      color:var(--red-2);
+      border-color:rgba(155,13,11,.24);
+    }
 
-  footer{
-    padding: 30px 0 24px 0;
-    color: var(--muted);
-    font-size: 12px;
-  }
+    footer{
+      padding: 34px 0 24px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-  .count{font-size:12px; color:var(--muted)}
+    .count{font-size:12px; color:var(--muted)}
 
-  .note{
-    font-size:12px; color:var(--muted);
-    border-left: 2px solid rgba(155,13,11,.55);
-    padding-left: 10px;
-    margin: 10px 0 0 0;
-  }
-</style>
+    .note{
+      font-size:12px; color:var(--muted);
+      border-left: 3px solid rgba(155,13,11,.55);
+      background:rgba(155,13,11,.04);
+      padding:12px 12px 12px 13px;
+      border-radius:0 12px 12px 0;
+      margin: 12px 0 0 0;
+    }
+
+    .mini-list{display:grid; gap:10px; margin-top:14px}
+    .mini-item{
+      padding:12px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+    .mini-item strong{display:block; margin-bottom:4px; font-size:13px}
+    .mini-item span{font-size:12px; color:var(--muted)}
   </style>
 </head>
 
 <body>
+  <div class="shape s1" aria-hidden="true"></div>
+  <div class="shape s2" aria-hidden="true"></div>
+  <div class="shape s3" aria-hidden="true"></div>
+
 <header>
   <div class="topbar">
     <div class="brand">
       <div class="avatar" aria-hidden="true"></div>
       <div>
-        <h1>Keneth A. Palacios </h1>
+        <h1>Keneth A. Palacios</h1>
         <p>Estudiante en Ciberseguridad Financiera | Auditoría de Sistemas & Data Analytics</p>
       </div>
     </div>
@@ -296,22 +434,24 @@
     <div class="links">
       <a class="btn" href="https://www.linkedin.com/in/keneth-palacios" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/KPforusesmain" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="mailto:kenethmain@gmail.com">Contacto</a>
+      <a class="btn btn-primary" href="mailto:kenethmain@gmail.com">Contacto</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="hero">
-    <h2>Resultados claros, proyectos mantenibles.</h2>
+    <div class="hero-badge">Índice optimizado</div>
+    <h2>Explora mi Portafolio de la manera que más te convenga.</h2>
     <p class="sub">
-      Usa los filtros del menú para explorar por áreas de interés. Dentro de cada proyecto verás mi proceso creativo, las métricas que validan cada decisión y el impacto real de los resultados.
-      <span class="muted">Filtro por tipo, búsqueda, y secciones por estado.</span>
+     <strong>Por Temas:</strong> Usa el menú en la barra superior para filtrar los proyectos según el área que te interese (ej. Diseño UX/UI, Estrategia de Contenidos, Desarrollo Front-end).
+     <p>
+     <strong>Por Visión Rápida:</strong> ¿Quieres ver el corazón de cada proyecto directamente? Los botones de acceso rápido te llevarán a las piezas clave de cada caso: desde el primer boceto hasta el resultado final y su impacto.
+    </p>
     </p>
   </section>
 
   <section class="grid">
-    <!-- LEFT: Projects -->
     <div class="panel">
       <div class="hd">
         <h3>Proyectos</h3>
@@ -325,13 +465,11 @@
             <input id="q" type="search" placeholder="Buscar: conciliación, dashboard, facturación..." />
           </div>
 
-          <div class="chips" id="chips">
-            <!-- chips se renderizan por JS -->
-          </div>
+          <div class="chips" id="chips"></div>
         </div>
 
         <p class="note">
-          Consejo: ¿Quieres ver el corazón de cada proyecto directamente? Los botones de acceso rápido te llevarán a las piezas clave de cada caso: desde el primer boceto hasta el resultado final y su impacto.
+          Usa los filtros del menú para explorar por áreas de interés. Dentro de cada proyecto verás mi proceso creativo, las métricas que validan cada decisión y el impacto real de los resultados.
         </p>
 
         <div class="section" id="sec-completed">
@@ -351,7 +489,6 @@
       </div>
     </div>
 
-    <!-- RIGHT: About / Highlights -->
     <aside class="panel">
       <div class="hd">
         <h3>Enfoque</h3>
@@ -367,29 +504,42 @@
             <div class="l">Prioridad (Contab → Software → GRC)</div>
           </div>
           <div class="kpi">
-            <div class="v">1 pág</div>
-            <div class="l">Executive Summary por proyecto</div>
+            <div class="v">PDF + Repo</div>
+            <div class="l">Acceso rápido por proyecto</div>
           </div>
         </div>
 
         <div style="margin-top:14px">
           <p class="muted" style="margin:0 0 10px 0">
-            Especializado en automatización y reporting para procesos contables/financieros:
-            conciliaciones, aging, control de calidad de datos y análisis de variaciones.
+            Especializado en automatización y reporting para procesos contables y financieros: conciliaciones, control de calidad de datos, dashboards y análisis de variaciones.
           </p>
 
           <div class="tags">
             <span class="tag">Excel Avanzado</span>
             <span class="tag">Python (pandas)</span>
-            <span class="tag">Power BI (opcional)</span>
+            <span class="tag">Power BI</span>
             <span class="tag">Automatización</span>
             <span class="tag">Control interno</span>
           </div>
 
-          <!-- Enlace selectivo NO visible públicamente (deja vacío y compártelo por DM cuando toque) -->
-          <!-- <div style="margin-top:12px">
-            <a class="btn" href="LINK-PRIVADO" target="_blank" rel="noopener">Recruiter Pack (Privado)</a>
-          </div> -->
+          <div class="mini-list">
+            <div class="mini-item">
+              <strong>Contabilidad / Finanzas </strong>
+              <span>Transformo datos financieros complejos en información accionable. Mi experiencia en contabilidad me permite entender el "por qué" detrás de los números, creando soluciones que realmente resuelven necesidades del negocio.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Desarollo de Software</strong>
+              <span>Construyo herramientas que simplifican procesos contables y financieros. Mi enfoque combina buenas prácticas de desarrollo con un profundo entendimiento del dominio.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Analisis de datos</strong>
+              <span>Convierto registros contables en insights estratégicos. Aplico análisis riguroso para validar hipótesis y respaldar cada recomendación con evidencia.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Ciberseguridad</strong>
+              <span>Integro controles de seguridad desde el diseño de cada solución. Mi formación en GRC me permite anticipar riesgos y proteger la integridad de la información financiera.</span>
+            </div>
+          </div>
         </div>
       </div>
     </aside>
@@ -401,56 +551,54 @@
 </main>
 
 <script>
-  // 1) DATA: edita aquí (fácil mantenimiento)
-  // status: "completed" | "progress" | "future"
-  // types: usa tags para filtros (ej. "Excel", "Python", "BI", "Software", "GRC")
   const PROJECTS = [
     {
       id: "p1-dashboard-financiero",
       title: "Dashboard Financiero PYME",
       status: "completed",
       summary: "KPIs de ingresos/gastos, margen, cashflow y variaciones para toma de decisiones.",
-      results: ["Reporte pdf del dashboard", "3 capturas", "Dataset sintético"],
-      tags: ["BI", "Git/Github", "Power BI", "Reporting","Python"],
-      // logos: se muestran como iconos en chips (no necesitas imágenes)
-      logos: ["BI"],
+      results: ["Reporte PDF del dashboard", "3 capturas", "Dataset sintético"],
+      tags: ["BI", "GitHub", "Power BI", "Reporting", "Python"],
+      logos: ["BI", "GitHub"],
       links: {
-        caseStudy: "https://github.com/KPforusesmain/dashboard-financiero-pyme/blob/main/assets/pdf/Dashboard%20Financiero%20PYME.pdf",
+        pdfView: "https://github.com/KPforusesmain/dashboard-financiero-pyme/blob/main/assets/pdf/Dashboard%20Financiero%20PYME.pdf",
+        pdfDownload: "https://github.com/KPforusesmain/dashboard-financiero-pyme/raw/main/assets/pdf/Dashboard%20Financiero%20PYME.pdf",
         demo: "",
-        repo: "https://github.com/KPforusesmain/dashboard-financiero-pyme.git" 
+        repo: "https://github.com/KPforusesmain/dashboard-financiero-pyme"
       }
     },
     {
       id: "p2-conciliacion",
       title: "Conciliación Bancaria Semi-Automática",
       status: "progress",
-      summary: "Matching por monto/fecha/texto con tolerancias. Output: matched/unmatched/review.",
+      summary: "Matching por monto, fecha y texto con tolerancias. Output: matched, unmatched y review.",
       results: ["Script Python", "Ejemplo CSV", "Reporte de diferencias"],
       tags: ["Python", "Excel", "Automatización", "Control interno"],
-      logos: ["Py", "XL"],
+      logos: ["Python", "Excel"],
       links: {
-        caseStudy: "",
+        pdfView: "",
+        pdfDownload: "",
         demo: "",
-        repo: ""
+        repo: "https://github.com/KPforusesmain/KP.github.io.git"
       }
     },
     {
       id: "p10-grc",
       title: "GRC Starter Kit (Finanzas)",
       status: "future",
-      summary: "Risk register + controles + evidencia + matriz impacto/probabilidad para procesos financieros.",
+      summary: "Risk register, controles, evidencia y matriz impacto/probabilidad para procesos financieros.",
       results: ["Plantillas", "Caso de ejemplo", "Mapa de controles"],
       tags: ["GRC", "Riesgo", "Compliance", "Procesos"],
       logos: ["GRC"],
       links: {
-        caseStudy: "",
+        pdfView: "",
+        pdfDownload: "",
         demo: "",
-        repo: "https://github.com/KPforusesmain/dashboard-financiero-pyme.git"
+        repo: "https://github.com/KPforusesmain/KP.github.io.git"
       }
     }
   ];
 
-  // 2) FILTERS: define chips (logos/tipos)
   const FILTERS = [
     { key: "ALL", label: "Todos", logo: "★" },
     { key: "Excel", label: "Excel", logo: "XL" },
@@ -458,10 +606,9 @@
     { key: "BI", label: "BI", logo: "BI" },
     { key: "Software", label: "Software", logo: "API" },
     { key: "GRC", label: "GRC", logo: "GRC" },
-    { key: "Github", label: "Github", logo: "GIT" },
+    { key: "GitHub", label: "GitHub", logo: "GIT" }
   ];
 
-  // State
   const state = {
     q: "",
     activeFilter: "ALL"
@@ -470,52 +617,80 @@
   const $ = (id) => document.getElementById(id);
 
   function normalize(str){
-    return (str || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    return (str || "")
+      .toString()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
   }
 
   function matchesFilter(p){
     if(state.activeFilter === "ALL") return true;
-    // Coincide si el filtro está en tags o en logos
     return (p.tags || []).includes(state.activeFilter) || (p.logos || []).includes(state.activeFilter);
   }
 
   function matchesQuery(p){
     const q = normalize(state.q).trim();
     if(!q) return true;
-    const hay = normalize([p.title, p.summary, (p.tags||[]).join(" "), (p.results||[]).join(" ")].join(" | "));
-    return hay.includes(q);
+    const haystack = normalize([
+      p.title,
+      p.summary,
+      (p.tags || []).join(" "),
+      (p.results || []).join(" ")
+    ].join(" | "));
+    return haystack.includes(q);
+  }
+
+  function createLinkButton(label, href, extraClass = "", extraAttrs = ""){
+    if(!href) return "";
+    return `<a class="a ${extraClass}" href="${href}" target="_blank" rel="noopener" ${extraAttrs}>${label}</a>`;
   }
 
   function cardHTML(p){
-    const statusLabel = p.status === "completed" ? "Completado" :
-                        p.status === "progress" ? "En progreso" : "Futuro";
+    const statusMap = {
+      completed: { label: "Completado", badgeClass: "completed" },
+      progress: { label: "En progreso", badgeClass: "progress" },
+      future: { label: "Futuro", badgeClass: "future" }
+    };
 
+    const status = statusMap[p.status] || statusMap.future;
     const actions = [];
-    if(p.links?.caseStudy) actions.push(`<a class="a" href="${p.links.caseStudy}" target="_blank" rel="noopener">Case Study (PDF)</a>`);
-    if(p.links?.demo) actions.push(`<a class="a" href="${p.links.demo}" target="_blank" rel="noopener">Demo</a>`);
-    if(p.links?.repo) actions.push(`<a class="a" href="${p.links.repo}" target="_blank" rel="noopener">Repo</a>`);
+
+    if(p.links?.pdfView) {
+      actions.push(createLinkButton("Visualizar PDF", p.links.pdfView, "pdf-view"));
+    }
+    if(p.links?.pdfDownload) {
+      actions.push(createLinkButton("Descargar PDF", p.links.pdfDownload, "pdf-download", 'download'));
+    }
+    if(p.links?.demo) {
+      actions.push(createLinkButton("Demo", p.links.demo));
+    }
+    if(p.links?.repo) {
+      actions.push(createLinkButton("Repositorio", p.links.repo));
+    }
 
     return `
-      <article class="card" data-id="${p.id}">
+      <article class="card" data-id="${p.id}" data-status="${p.status}">
         <div class="row">
           <div style="min-width:0">
             <div class="title">${p.title}</div>
           </div>
-          <div class="badge">${statusLabel}</div>
+          <div class="badge ${status.badgeClass}">${status.label}</div>
         </div>
+
         <p class="desc">${p.summary}</p>
 
         <div class="tags">
-          ${(p.tags || []).slice(0,6).map(t => `<span class="tag">${t}</span>`).join("")}
+          ${(p.tags || []).slice(0, 6).map(t => `<span class="tag">${t}</span>`).join("")}
         </div>
 
         <div class="desc" style="margin-top:2px">
-          <strong style="color:rgba(231,238,249,.92); font-weight:650">Entregables:</strong>
-          ${(p.results || []).slice(0,3).join(" · ")}
+          <strong style="color:var(--black); font-weight:700">Entregables:</strong>
+          ${(p.results || []).slice(0, 3).join(" · ")}
         </div>
 
         <div class="actions">
-          ${actions.join("") || `<span class="muted" style="font-size:12px">Próximamente: enlaces</span>`}
+          ${actions.join("") || `<span class="muted" style="font-size:12px">Próximamente: enlaces y PDF</span>`}
         </div>
       </article>
     `;
@@ -524,8 +699,7 @@
   function renderChips(){
     const wrap = $("chips");
     wrap.innerHTML = FILTERS.map(f => `
-      <div class="chip" role="button" tabindex="0"
-           data-key="${f.key}" data-active="${f.key === state.activeFilter}">
+      <div class="chip" role="button" tabindex="0" data-key="${f.key}" data-active="${f.key === state.activeFilter}">
         <span class="logo" aria-hidden="true">${f.logo}</span>
         <small>${f.label}</small>
       </div>
@@ -544,7 +718,6 @@
   }
 
   function render(){
-    // update chips active state
     document.querySelectorAll(".chip").forEach(el => {
       el.dataset.active = (el.dataset.key === state.activeFilter).toString();
     });
@@ -556,29 +729,25 @@
     const future = filtered.filter(p => p.status === "future");
 
     $("cards-completed").innerHTML = completed.map(cardHTML).join("") || `<p class="muted">Sin resultados.</p>`;
-    $("cards-progress").innerHTML  = progress.map(cardHTML).join("")  || `<p class="muted">Sin resultados.</p>`;
-    $("cards-future").innerHTML    = future.map(cardHTML).join("")    || `<p class="muted">Sin resultados.</p>`;
+    $("cards-progress").innerHTML  = progress.map(cardHTML).join("") || `<p class="muted">Sin resultados.</p>`;
+    $("cards-future").innerHTML    = future.map(cardHTML).join("") || `<p class="muted">Sin resultados.</p>`;
 
-    // show/hide sections if empty
     $("sec-completed").style.display = completed.length ? "block" : "none";
-    $("sec-progress").style.display  = progress.length  ? "block" : "none";
-    $("sec-future").style.display    = future.length    ? "block" : "none";
+    $("sec-progress").style.display  = progress.length ? "block" : "none";
+    $("sec-future").style.display    = future.length ? "block" : "none";
 
     $("count").textContent = `${filtered.length} resultado${filtered.length === 1 ? "" : "s"}`;
     $("kpi-total").textContent = `${PROJECTS.length}`;
   }
 
-  // events
   $("q").addEventListener("input", (e) => {
     state.q = e.target.value;
     render();
   });
 
-  // init
   $("year").textContent = new Date().getFullYear();
   renderChips();
   render();
 </script>
-
 </body>
 </html>
