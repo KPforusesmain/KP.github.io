@@ -410,14 +410,14 @@
       title: "Dashboard Financiero PYME",
       status: "completed",
       summary: "KPIs de ingresos/gastos, margen, cashflow y variaciones para toma de decisiones.",
-      results: ["Reporte 1 pág", "6 capturas", "Dataset sintético"],
-      tags: ["BI", "Excel", "Power BI", "Reporting"],
+      results: ["Reporte pdf del dashboard", "3 capturas", "Dataset sintético"],
+      tags: ["BI", "Git/Github", "Power BI", "Reporting","Python"],
       // logos: se muestran como iconos en chips (no necesitas imágenes)
       logos: ["BI"],
       links: {
-        caseStudy: "assets/pdf/p1-dashboard.pdf",
+        caseStudy: "https://github.com/KPforusesmain/dashboard-financiero-pyme/blob/main/assets/pdf/Dashboard%20Financiero%20PYME.pdf",
         demo: "",
-        repo: "" // opcional
+        repo: "https://github.com/KPforusesmain/dashboard-financiero-pyme.git" 
       }
     },
     {
@@ -429,7 +429,7 @@
       tags: ["Python", "Excel", "Automatización", "Control interno"],
       logos: ["Py", "XL"],
       links: {
-        caseStudy: "assets/pdf/p2-conciliacion.pdf",
+        caseStudy: "",
         demo: "",
         repo: ""
       }
@@ -445,13 +445,12 @@
       links: {
         caseStudy: "",
         demo: "",
-        repo: ""
+        repo: "https://github.com/KPforusesmain/dashboard-financiero-pyme.git"
       }
     }
   ];
 
   // 2) FILTERS: define chips (logos/tipos)
-  // "logo" es una etiqueta corta que aparece como icono; "key" filtra por tags y/o por logos
   const FILTERS = [
     { key: "ALL", label: "Todos", logo: "★" },
     { key: "Excel", label: "Excel", logo: "XL" },
@@ -459,6 +458,7 @@
     { key: "BI", label: "BI", logo: "BI" },
     { key: "Software", label: "Software", logo: "API" },
     { key: "GRC", label: "GRC", logo: "GRC" },
+    { key: "Github", label: "Github", logo: "GIT" },
   ];
 
   // State
