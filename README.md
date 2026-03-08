@@ -6,31 +6,7 @@
 
 > **Explora mi portafolio de la manera que más te convenga**
 
----
 
-## Formas de Explorar
-
-### **Por Temas**
-Usa el menú en la barra superior para filtrar los proyectos según el área que te interese.
-
-### **Por Visión Rápida**
-¿Quieres ver el corazón de cada proyecto directamente? Los botones de acceso rápido te llevarán a las piezas clave de cada caso: desde el primer boceto hasta el resultado final y su impacto.
-
----
-
-## Categorías de Proyectos
-
-<div align="center">
-
-| Buscar | | | | | | |
-|--------|---|---|---|---|---|---|
-| conciliación, dashboard, facturación... | **Todos** | **Excel** | **Python** | **BI** | **Software** | **GRC** | **GitHub** |
-
-</div>
-
-### Conciliaciones Bancarias
-
-> Usa los filtros del menú para explorar por áreas de interés. Dentro de cada proyecto verás mi proceso creativo, las métricas que validan cada decisión y el impacto real de los resultados.
 
 ---
 
@@ -59,6 +35,14 @@ Especializado en **automatización y reporting para procesos contables y financi
 #### Desarrollo de Software
 > Construye herramientas que simplifican procesos contables y financieros. Mi enfoque combina buenas prácticas de desarrollo con un profundo entendimiento del dominio.
 
+#### Analisis de datos
+> Convierto registros contables en insights estratégicos. Aplico análisis riguroso para validar hipótesis y respaldar cada recomendación con evidencia.
+
+#### Ciberseguridad
+
+> Integro controles de seguridad desde el diseño de cada solución. Mi formación en GRC me permite anticipar riesgos y proteger la integridad de la información financiera.
+
+
 ---
 
 ## Proyectos Completados
@@ -66,7 +50,7 @@ Especializado en **automatización y reporting para procesos contables y financi
 ### Dashboard Financiero PYME | V1.0
 **KPI de ingresos/gastos, margen, cashflow y variaciones para toma de decisiones.**
 
-| Tecnologías | | | |
+| | | | |
 |-------------|---|---|---|
 | **BI** | **GitHub** | **Power BI** | **Reporting** |
 
@@ -76,10 +60,10 @@ Especializado en **automatización y reporting para procesos contables y financi
 - Dataset sintético
 
 <div align="center">
-  <a href="#">
+  <a href="https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/blob/main/assets/pdf/reporte_conciliacion.pdf">
     <img src="https://img.shields.io/badge/_Visualizar_PDF-FF6B6B?style=for-the-badge" alt="Visualizar PDF">
   </a>
-  <a href="#">
+  <a href="https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/raw/main/assets/pdf/reporte_conciliacion.pdf">
     <img src="https://img.shields.io/badge/_Descargar_PDF-4ECDC4?style=for-the-badge" alt="Descargar PDF">
   </a>
 </div>
@@ -89,9 +73,9 @@ Especializado en **automatización y reporting para procesos contables y financi
 ### Conciliación Bancaria Semi-Automática | V1.0
 **Matching por monto, fecha y texto con tolerancias. Output: matched, unmatched y review.**
 
-| Tecnologías | | | |
+|  | | | |
 |-------------|---|---|---|
-| **Python** | **Excel** | **Conciliaciones Bancarias** |
+| **Python** | **Excel** | **Conciliaciones Bancarias** | Reporting
 
 #### Entregables:
 - Script Python
@@ -99,10 +83,10 @@ Especializado en **automatización y reporting para procesos contables y financi
 - Reporte de diferencias
 
 <div align="center">
-  <a href="#">
+  <a href="https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/blob/main/assets/pdf/reporte_conciliacion.pdf">
     <img src="https://img.shields.io/badge/_Visualizar_PDF-FF6B6B?style=for-the-badge" alt="Visualizar PDF">
   </a>
-  <a href="#">
+  <a href="https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/raw/main/assets/pdf/reporte_conciliacion.pdf">
     <img src="https://img.shields.io/badge/_Descargar_PDF-4ECDC4?style=for-the-badge" alt="Descargar PDF">
   </a>
 </div>
