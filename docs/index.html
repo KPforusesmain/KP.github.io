@@ -563,7 +563,7 @@
       links: {
         pdfView: "https://github.com/KPforusesmain/dashboard-financiero-pyme/blob/main/assets/pdf/DASHBOARD FINANCIERO PYME.pdf",
         pdfDownload: "https://github.com/KPforusesmain/dashboard-financiero-pyme/raw/main/assets/pdf/DASHBOARD FINANCIERO PYME.pdf",
-        demo: "",
+        demo: "https://github.com/KPforusesmain/dashboard-financiero-pyme/raw/main/assets/pdf/Dashboard Financiero PYME v1.0.pdf",
         repo: "https://github.com/KPforusesmain/dashboard-financiero-pyme"
       }
     },
@@ -578,7 +578,7 @@
       links: {
         pdfView: "https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/blob/main/assets/pdf/reporte_conciliacion.pdf",
         pdfDownload: "https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/raw/main/assets/pdf/reporte_conciliacion.pdf",
-        demo: "",
+        demo: "https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica/raw/main/assets/pdf/reporte_conciliacion.pdf",
         repo: "https://github.com/KPforusesmain/conciliacion-bancaria-semi-automatica.git"
       }
     },
@@ -622,8 +622,8 @@
         logos: ["GitHub"],
         links: {
           pdfView: "https://github.com/KPforusesmain/KP.github.io/blob/main/otros_proyectos/assets/Reporte Pronóstico de Ventas y Análisis Comercial.pdf",
-          pdfDownload: "https://github.com/KPforusesmain/KP.github.io/raw/main/otros_proyectos/assets/Reporte Pronóstico de Ventas y Análisis Comercial.pdf",
-          demo: "",
+          pdfDownload: "https://github.com/KPforusesmain/KP.github.io/raw/main/otros_proyectos/assets/Modelo de Pronóstico de Ventas y Análisis Comercial.pdf",
+          demo: "https://github.com/KPforusesmain/KP.github.io/raw/main/otros_proyectos/assets/Reporte Pronóstico de Ventas y Análisis Comercial.pdf",
           repo: ""
         }
       }
@@ -691,13 +691,13 @@
     const actions = [];
 
     if(p.links?.pdfView) {
-      actions.push(createLinkButton("Visualizar PDF", p.links.pdfView, "pdf-view"));
+      actions.push(createLinkButton("Ver Documentación", p.links.pdfView, "pdf-view"));
     }
     if(p.links?.pdfDownload) {
-      actions.push(createLinkButton("Descargar PDF", p.links.pdfDownload, "pdf-download", 'download'));
+      actions.push(createLinkButton("Descargar Documentación", p.links.pdfDownload, "pdf-download", 'download'));
     }
     if(p.links?.demo) {
-      actions.push(createLinkButton("Demo", p.links.demo));
+      actions.push(createLinkButton("Demo PDF", p.links.demo));
     }
     if(p.links?.repo) {
       actions.push(createLinkButton("Repositorio", p.links.repo));
